@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Assignments</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/students.css" %}">
+</head>
+<body>
+<h1>List of assignments for a students</h1>
+{% for assignment in assignments %}
+    <a href="/grade_keeper/assignment/{{ assignment.assigment_id }}">{{ assignment.assigment_id }}: {{ assignment.name }}</a><br />
+{% endfor %}
+<a href="/grade_keeper/add_assigment" class="add_assigment_class">Add Assigment</a>
+<form method="POST" action="{% url "delete" %}">
+    {% csrf_token %}
+    <input class="add_clear_class" type="submit" value="Clear all">
+</form>
+<hr/>
+</body>
+</html>
