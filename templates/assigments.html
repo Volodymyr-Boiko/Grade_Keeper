@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Assigments</title>
+</head>
+<body>
+{% for assigment in assigments %}
+    <table border="1" style="width:100%">
+        <tr>
+            <td><strong>Task name</strong></td>
+            <td><strong>Task text</strong></td>
+            <td><strong>Due date</strong></td>
+            <td><strong>Possible points</strong></td>
+        </tr>
+        <tr>
+            <td>{{ assigment.name }}</td>
+            <td>{{ assigment.text }}</td>
+            <td>{{ assigment.due_date }}</td>
+            <td>{{ assigment.points_possible }}</td>
+        </tr>
+    </table>
+{% endfor %}
+</body>
+</html>
