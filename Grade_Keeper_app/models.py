@@ -15,6 +15,7 @@ class Student(models.Model):
     e_mail = models.EmailField(max_length=30)
     point = models.IntegerField(default=0)
 
+    # method
     def grade_point(self, assignment_id):
         assignment = Assignments.objects.get(int(assignment_id))
         grade = (float(self.point) / float(assignment.points_possible)) * 100.0
